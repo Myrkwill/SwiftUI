@@ -17,6 +17,13 @@
 		AB469DEC27C178D500A343A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469DC227C178D200A343A1 /* ContentView.swift */; };
 		AB469DED27C178D500A343A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB469DC327C178D500A343A1 /* Assets.xcassets */; };
 		AB469DEE27C178D500A343A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB469DC327C178D500A343A1 /* Assets.xcassets */; };
+		AB469E0127C1791B00A343A1 /* QuizGameHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0027C1791B00A343A1 /* QuizGameHome.swift */; };
+		AB469E0227C1791B00A343A1 /* QuizGameHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0027C1791B00A343A1 /* QuizGameHome.swift */; };
+		AB469E0427C1794400A343A1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0327C1794400A343A1 /* Color.swift */; };
+		AB469E0527C1794400A343A1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0327C1794400A343A1 /* Color.swift */; };
+		AB469E0827C1797F00A343A1 /* SPSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = AB469E0727C1797F00A343A1 /* SPSafeSymbols */; };
+		AB469E0A27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0927C17E8800A343A1 /* QuizGamePuzzle.swift */; };
+		AB469E0B27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0927C17E8800A343A1 /* QuizGamePuzzle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,9 @@
 		AB469DE127C178D500A343A1 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB469DE527C178D500A343A1 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		AB469DE727C178D500A343A1 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		AB469E0027C1791B00A343A1 /* QuizGameHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameHome.swift; sourceTree = "<group>"; };
+		AB469E0327C1794400A343A1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		AB469E0927C17E8800A343A1 /* QuizGamePuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGamePuzzle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB469E0827C1797F00A343A1 /* SPSafeSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +108,8 @@
 		AB469DC027C178D200A343A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AB469E0327C1794400A343A1 /* Color.swift */,
+				AB469DFD27C178E800A343A1 /* QuizGame */,
 				AB469DC127C178D200A343A1 /* SwiftUIProjectsApp.swift */,
 				AB469DC227C178D200A343A1 /* ContentView.swift */,
 				AB469DC327C178D500A343A1 /* Assets.xcassets */,
@@ -141,6 +154,31 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		AB469DFD27C178E800A343A1 /* QuizGame */ = {
+			isa = PBXGroup;
+			children = (
+				AB469DFF27C1790300A343A1 /* View */,
+				AB469DFE27C178F700A343A1 /* Model */,
+			);
+			path = QuizGame;
+			sourceTree = "<group>";
+		};
+		AB469DFE27C178F700A343A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB469E0927C17E8800A343A1 /* QuizGamePuzzle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB469DFF27C1790300A343A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB469E0027C1791B00A343A1 /* QuizGameHome.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +195,9 @@
 			dependencies = (
 			);
 			name = "SwiftUIProjects (iOS)";
+			packageProductDependencies = (
+				AB469E0727C1797F00A343A1 /* SPSafeSymbols */,
+			);
 			productName = "SwiftUIProjects (iOS)";
 			productReference = AB469DC827C178D500A343A1 /* SwiftUIProjects.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +290,9 @@
 				Base,
 			);
 			mainGroup = AB469DBB27C178D200A343A1;
+			packageReferences = (
+				AB469E0627C1797F00A343A1 /* XCRemoteSwiftPackageReference "SPSafeSymbols" */,
+			);
 			productRefGroup = AB469DC927C178D500A343A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,8 +343,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB469E0427C1794400A343A1 /* Color.swift in Sources */,
 				AB469DEB27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DE927C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
+				AB469E0A27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */,
+				AB469E0127C1791B00A343A1 /* QuizGameHome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +355,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB469E0527C1794400A343A1 /* Color.swift in Sources */,
 				AB469DEC27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DEA27C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
+				AB469E0B27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */,
+				AB469E0227C1791B00A343A1 /* QuizGameHome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +753,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB469E0627C1797F00A343A1 /* XCRemoteSwiftPackageReference "SPSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparrowcode/SPSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB469E0727C1797F00A343A1 /* SPSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB469E0627C1797F00A343A1 /* XCRemoteSwiftPackageReference "SPSafeSymbols" */;
+			productName = SPSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB469DBC27C178D200A343A1 /* Project object */;
 }

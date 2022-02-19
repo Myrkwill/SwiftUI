@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SPSafeSymbols",
+        "repositoryURL": "https://github.com/sparrowcode/SPSafeSymbols.git",
+        "state": {
+          "branch": null,
+          "revision": "9af06f7d21b2b2ad83ce2216506c0ff4ff0c3809",
+          "version": "1.0.5"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
