@@ -9,18 +9,23 @@ import SwiftUI
 
 // Модель позла
 struct QuizGamePuzzle: Identifiable {
-	///  Идентификатор
+
 	var id: String = UUID().uuidString
-
-	/// Имя картинки
 	var imageName: String
-
-	/// Ответ
 	var answer: String
 
 	/// Слово, из которого выстраиивается верное слово
 	var jumbbledWord: String
 
+	///
+	var latters: [QuizGameLatter] = []
+
+}
+
+struct QuizGameLatter {
+
+	var id: String = UUID().uuidString
+	var value: String
 }
 
 let puzzles: [QuizGamePuzzle] = [

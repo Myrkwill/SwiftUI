@@ -51,15 +51,53 @@ struct QuizGameHome: View {
 					.resizable()
 					.aspectRatio(contentMode: .fit)
 					.frame(height: 200)
-					.padding(.top)
+					.padding(.vertical)
 
+
+				// MARK: - Puzzle Fill Blanks
+				HStack(spacing: 10) {
+					ForEach(0..<currentPuzzle.answer.count, id: \.self) { index in
+						ZStack {
+							RoundedRectangle(cornerRadius: 10)
+								.fill(Color.deepSkyBlue.opacity(0.2))
+								.frame(height: 60)
+						}
+					}
+				}
 			}
 			.padding()
 			.background(.white, in: RoundedRectangle(cornerRadius: 15))
+
+			// MARK: - Custom Honey Combo Grid View
+			HoneyComboGridView(items: currentPuzzle.latters) { item in
+				Text(item.value)
+			}
+
+			// MARK: - Next Button
+			Button {
+
+			} label: {
+				Text("Next")
+					.font(.title3.bold())
+					.foregroundColor(.white)
+					.padding(.vertical)
+					.frame(maxWidth: .infinity)
+					.background(Color.deepSkyBlue, in: RoundedRectangle(cornerRadius: 15))
+			}
 		}
 		.padding()
 		.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
 		.background(Color.blue)
+		.onAppear {
+			generateLatters()
+		}
+	}
+
+	private func generateLatters() {
+		currentPuzzle.jumbbledWord.forEach { char in
+			let latter = QuizGameLatter(value: String(char))
+			currentPuzzle.latters.append(latter)
+		}
 	}
 }
 
