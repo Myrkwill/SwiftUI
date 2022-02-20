@@ -26,6 +26,8 @@
 		AB469E0B27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0927C17E8800A343A1 /* QuizGamePuzzle.swift */; };
 		AB469E1027C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0F27C2B2A800A343A1 /* HoneyComboGridView.swift */; };
 		AB469E1127C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0F27C2B2A800A343A1 /* HoneyComboGridView.swift */; };
+		AB469E1327C2BABC00A343A1 /* HexagonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E1227C2BABC00A343A1 /* HexagonShape.swift */; };
+		AB469E1427C2BABC00A343A1 /* HexagonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E1227C2BABC00A343A1 /* HexagonShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		AB469E0327C1794400A343A1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		AB469E0927C17E8800A343A1 /* QuizGamePuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGamePuzzle.swift; sourceTree = "<group>"; };
 		AB469E0F27C2B2A800A343A1 /* HoneyComboGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyComboGridView.swift; sourceTree = "<group>"; };
+		AB469E1227C2BABC00A343A1 /* HexagonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,7 @@
 			children = (
 				AB469E0027C1791B00A343A1 /* QuizGameHome.swift */,
 				AB469E0F27C2B2A800A343A1 /* HoneyComboGridView.swift */,
+				AB469E1227C2BABC00A343A1 /* HexagonShape.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB469E0427C1794400A343A1 /* Color.swift in Sources */,
+				AB469E1327C2BABC00A343A1 /* HexagonShape.swift in Sources */,
 				AB469E1027C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
 				AB469DEB27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DE927C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
@@ -361,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB469E0527C1794400A343A1 /* Color.swift in Sources */,
+				AB469E1427C2BABC00A343A1 /* HexagonShape.swift in Sources */,
 				AB469E1127C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
 				AB469DEC27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DEA27C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,

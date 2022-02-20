@@ -70,7 +70,11 @@ struct QuizGameHome: View {
 
 			// MARK: - Custom Honey Combo Grid View
 			HoneyComboGridView(items: currentPuzzle.latters) { item in
-				Text(item.value)
+				HexagonShape()
+					.fill(Color.orange)
+					.aspectRatio(contentMode: .fit)
+					.shadow(color: .black.opacity(0.1), radius: 5, x: 10, y: 5)
+					.shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 8)
 			}
 
 			// MARK: - Next Button
@@ -82,7 +86,7 @@ struct QuizGameHome: View {
 					.foregroundColor(.white)
 					.padding(.vertical)
 					.frame(maxWidth: .infinity)
-					.background(Color.deepSkyBlue, in: RoundedRectangle(cornerRadius: 15))
+					.background(Color.orange, in: RoundedRectangle(cornerRadius: 15))
 			}
 		}
 		.padding()
