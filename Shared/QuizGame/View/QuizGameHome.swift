@@ -13,6 +13,9 @@ struct QuizGameHome: View {
 	// MARK: - Текущий пазл
 	@State var currentPuzzle: QuizGamePuzzle = puzzles[0]
 
+	// MARK: -
+	@State var selectedLetters: [QuizGameLatter] = []
+
 	var body: some View {
 		VStack {
 
@@ -59,8 +62,17 @@ struct QuizGameHome: View {
 					ForEach(0..<currentPuzzle.answer.count, id: \.self) { index in
 						ZStack {
 							RoundedRectangle(cornerRadius: 10)
-								.fill(Color.deepSkyBlue.opacity(0.2))
+								.fill(Color.deepSkyBlue.opacity(
+									selectedLetters.count > index ? 1 : 0.2
+								))
 								.frame(height: 60)
+
+							if selectedLetters.count > index {
+								Text(selectedLetters[index].value)
+									.font(.title)
+									.fontWeight(.black)
+									.foregroundColor(.white)
+							}
 						}
 					}
 				}
@@ -70,16 +82,31 @@ struct QuizGameHome: View {
 
 			// MARK: - Custom Honey Combo Grid View
 			HoneyComboGridView(items: currentPuzzle.latters) { item in
-				HexagonShape()
-					.fill(Color.orange)
-					.aspectRatio(contentMode: .fit)
-					.shadow(color: .black.opacity(0.1), radius: 5, x: 10, y: 5)
-					.shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 8)
+				ZStack {
+					HexagonShape()
+						.fill(isSelected(latter: item) ? Color.orange : .white)
+						.aspectRatio(contentMode: .fit)
+						.shadow(color: .black.opacity(0.1), radius: 5, x: 10, y: 5)
+						.shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 8)
+
+					Text(item.value)
+						.font(.largeTitle)
+						.fontWeight(.black)
+						.foregroundColor(
+							isSelected(latter: item) ? .white : .gray.opacity(0.5)
+						)
+				}
+				.contentShape(HexagonShape())
+				.onTapGesture {
+					addLatter(item)
+				}
 			}
 
 			// MARK: - Next Button
 			Button {
-
+				selectedLetters.removeAll()
+				currentPuzzle = puzzles[0]
+				generateLatters()
 			} label: {
 				Text("Next")
 					.font(.title3.bold())
@@ -88,6 +115,8 @@ struct QuizGameHome: View {
 					.frame(maxWidth: .infinity)
 					.background(Color.orange, in: RoundedRectangle(cornerRadius: 15))
 			}
+			.disabled(selectedLetters.count != currentPuzzle.answer.count)
+			.opacity(selectedLetters.count != currentPuzzle.answer.count ? 0.6 : 1)
 		}
 		.padding()
 		.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -95,6 +124,21 @@ struct QuizGameHome: View {
 		.onAppear {
 			generateLatters()
 		}
+	}
+
+	private func addLatter(_ latter: QuizGameLatter) {
+		withAnimation {
+			if isSelected(latter: latter) {
+				selectedLetters.removeAll { $0.id == latter.id }
+			} else {
+				if selectedLetters.count == currentPuzzle.latters.count { return }
+				selectedLetters.append(latter)
+			}
+		}
+	}
+
+	private func isSelected(latter: QuizGameLatter) -> Bool {
+		selectedLetters.contains { $0.id == latter.id }
 	}
 
 	private func generateLatters() {

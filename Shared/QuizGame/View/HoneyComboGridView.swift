@@ -27,6 +27,7 @@ struct HoneyComboGridView<Content: View, Item>: View where Item: RandomAccessCol
 					ForEach(setupHoneyGrid()[index].indices, id: \.self) { subIndex in
 						content(setupHoneyGrid()[index][subIndex])
 							.frame(width: width / 4)
+							.offset(x: setOffset(index: index))
 					}
 				}
 			}
@@ -48,7 +49,26 @@ struct HoneyComboGridView<Content: View, Item>: View where Item: RandomAccessCol
 		}
     }
 
-	func setupHoneyGrid() -> [[Item.Element]] {
+	private func setOffset(index: Int) -> CGFloat {
+		let current = setupHoneyGrid()[index].count
+		let offset = (width / 4) / 2
+
+		if index != 0 {
+			let previous = setupHoneyGrid()[index - 1].count
+
+			if current == 1 && previous % 2 == 0 {
+				return 0
+			}
+
+			if previous % current == 0 {
+				return -offset - 2
+			}
+		}
+
+		return 0
+	}
+
+	private func setupHoneyGrid() -> [[Item.Element]] {
 		var rows: [[Item.Element]] = []
 		var itemsAtRow: [Item.Element] = []
 
