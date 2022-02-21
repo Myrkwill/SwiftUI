@@ -131,7 +131,7 @@ struct HoneyComboGridView<Content: View, Item>: View where Item: RandomAccessCol
 
 struct HoneyComboGridView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        QuizGameHome()
     }
 }
 

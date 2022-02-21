@@ -10,10 +10,12 @@ import SPSafeSymbols
 
 struct QuizGameHome: View {
 
+	@Environment(\.presentationMode) var presentationMode
+
 	// MARK: - Текущий пазл
 	@State var currentPuzzle: QuizGamePuzzle = puzzles[0]
 
-	// MARK: -
+	// MARK: - Выбранные буквы
 	@State var selectedLetters: [QuizGameLatter] = []
 
 	var body: some View {
@@ -22,9 +24,9 @@ struct QuizGameHome: View {
 			VStack {
 				HStack {
 
-					/// Кнопка
+					/// Кнопка назад
 					Button {
-
+						presentationMode.wrappedValue.dismiss()
 					} label: {
 						Image(.arrowtriangle.backwardSquareFill)
 							.font(.title)
