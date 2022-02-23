@@ -14,34 +14,35 @@ struct ContentView: View {
     var body: some View {
 		NavigationView {
 			VStack {
-				NavigationLink(tag: 1, selection: $selection) {
-					QuizGameHome()
-						.navigationBarTitle("")
-						.navigationBarHidden(true)
-				} label: {
-					Button {
-						self.selection = 1
-					} label: {
-						HStack {
-							Spacer()
-							Text("Go To Quiz Game")
-								.foregroundColor(Color.white)
-								.bold()
-							Spacer()
-						}
-					}
-					.accentColor(Color.black)
-					.padding()
-					.background(Color.orange)
-					.cornerRadius(15)
-					.padding(Edge.Set.vertical, 20)
-				}
+				naviagtionButtonLink(for: .qiuz)
+				naviagtionButtonLink(for: .tetris)
 			}
 			.padding()
 			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
 			.navigationTitle("SwiftUIProjects")
 		}
     }
+
+	func naviagtionButtonLink(for project: Project) -> some View {
+		NavigationLink(tag: project.rawValue, selection: $selection) {
+			project.view
+		} label: {
+			Button {
+				self.selection = project.rawValue
+			} label: {
+				HStack {
+					Spacer()
+					Text(project.title)
+						.foregroundColor(Color.white)
+						.bold()
+					Spacer()
+				}
+			}
+			.padding()
+			.background(project.backgroundColor)
+			.cornerRadius(15)
+		}
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
