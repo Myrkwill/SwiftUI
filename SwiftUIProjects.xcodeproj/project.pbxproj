@@ -28,6 +28,12 @@
 		AB469E1127C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E0F27C2B2A800A343A1 /* HoneyComboGridView.swift */; };
 		AB469E1327C2BABC00A343A1 /* HexagonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E1227C2BABC00A343A1 /* HexagonShape.swift */; };
 		AB469E1427C2BABC00A343A1 /* HexagonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E1227C2BABC00A343A1 /* HexagonShape.swift */; };
+		AB469E1C27C6ACA400A343A1 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E1B27C6ACA400A343A1 /* Project.swift */; };
+		AB469E1D27C6ACA400A343A1 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E1B27C6ACA400A343A1 /* Project.swift */; };
+		AB469E2127C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2027C6AE3400A343A1 /* TetrisGameViewModel.swift */; };
+		AB469E2227C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2027C6AE3400A343A1 /* TetrisGameViewModel.swift */; };
+		AB469E2827C6B07300A343A1 /* TetrisGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2727C6B07300A343A1 /* TetrisGameView.swift */; };
+		AB469E2927C6B07300A343A1 /* TetrisGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2727C6B07300A343A1 /* TetrisGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,9 @@
 		AB469E0927C17E8800A343A1 /* QuizGamePuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGamePuzzle.swift; sourceTree = "<group>"; };
 		AB469E0F27C2B2A800A343A1 /* HoneyComboGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyComboGridView.swift; sourceTree = "<group>"; };
 		AB469E1227C2BABC00A343A1 /* HexagonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonShape.swift; sourceTree = "<group>"; };
+		AB469E1B27C6ACA400A343A1 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		AB469E2027C6AE3400A343A1 /* TetrisGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameViewModel.swift; sourceTree = "<group>"; };
+		AB469E2727C6B07300A343A1 /* TetrisGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +123,13 @@
 		AB469DC027C178D200A343A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				AB469E0327C1794400A343A1 /* Color.swift */,
 				AB469DFD27C178E800A343A1 /* QuizGame */,
+				AB469E1E27C6ADDA00A343A1 /* TetrisGame */,
+				AB469E0327C1794400A343A1 /* Color.swift */,
 				AB469DC127C178D200A343A1 /* SwiftUIProjectsApp.swift */,
 				AB469DC227C178D200A343A1 /* ContentView.swift */,
 				AB469DC327C178D500A343A1 /* Assets.xcassets */,
+				AB469E1B27C6ACA400A343A1 /* Project.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -183,6 +194,31 @@
 				AB469E0027C1791B00A343A1 /* QuizGameHome.swift */,
 				AB469E0F27C2B2A800A343A1 /* HoneyComboGridView.swift */,
 				AB469E1227C2BABC00A343A1 /* HexagonShape.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB469E1E27C6ADDA00A343A1 /* TetrisGame */ = {
+			isa = PBXGroup;
+			children = (
+				AB469E2327C6B03C00A343A1 /* View */,
+				AB469E1F27C6ADF800A343A1 /* ViewModel */,
+			);
+			path = TetrisGame;
+			sourceTree = "<group>";
+		};
+		AB469E1F27C6ADF800A343A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AB469E2027C6AE3400A343A1 /* TetrisGameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AB469E2327C6B03C00A343A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB469E2727C6B07300A343A1 /* TetrisGameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,12 +388,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB469E0427C1794400A343A1 /* Color.swift in Sources */,
+				AB469E2827C6B07300A343A1 /* TetrisGameView.swift in Sources */,
 				AB469E1327C2BABC00A343A1 /* HexagonShape.swift in Sources */,
 				AB469E1027C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
 				AB469DEB27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DE927C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
+				AB469E2127C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */,
 				AB469E0A27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */,
 				AB469E0127C1791B00A343A1 /* QuizGameHome.swift in Sources */,
+				AB469E1C27C6ACA400A343A1 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,12 +405,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB469E0527C1794400A343A1 /* Color.swift in Sources */,
+				AB469E2927C6B07300A343A1 /* TetrisGameView.swift in Sources */,
 				AB469E1427C2BABC00A343A1 /* HexagonShape.swift in Sources */,
 				AB469E1127C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
 				AB469DEC27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DEA27C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
+				AB469E2227C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */,
 				AB469E0B27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */,
 				AB469E0227C1791B00A343A1 /* QuizGameHome.swift in Sources */,
+				AB469E1D27C6ACA400A343A1 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

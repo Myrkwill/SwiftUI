@@ -18,7 +18,9 @@ enum Project: Int {
 				.navigationBarTitle("")
 				.navigationBarHidden(true)
 		case .tetris:
-			QuizGameHome()
+			TetrisGameView()
+				.navigationBarTitle("")
+				.navigationBarHidden(true)
 		}
 	}
 
