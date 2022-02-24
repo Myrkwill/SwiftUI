@@ -6,26 +6,39 @@
 //
 
 import SwiftUI
+import Combine
 
 class TetrisGameViewModel: ObservableObject {
-	var rows: Int
-	var columns: Int
-	@Published var board: [[TetrisGameSquare]]
 
-	init(rows: Int = 23, columns: Int = 10) {
-		self.rows = rows
-		self.columns = columns
+	@Published var tetrisGameModel = TetrisGameModel()
 
-		let repeating = Array(repeating: TetrisGameSquare(color: .black), count: rows)
-		board = Array(repeating: repeating, count: columns)
+	var rows: Int { tetrisGameModel.rows }
+	var columns: Int { tetrisGameModel.columns }
+	var board: [[TetrisGameSquare]] {
+		tetrisGameModel.board.map { $0.map(convertToSquare) }
 	}
 
-	func squareClicked(row: Int, column: Int) {
-		if board[row][column].color == .black {
-			board[row][column].color = .red
-		} else {
-			board[row][column].color = .black
+	var anyCancellable: AnyCancellable?
+
+	init() {
+		anyCancellable = tetrisGameModel.objectWillChange.sink {
+			self.objectWillChange.send()
 		}
+	}
+
+	func convertToSquare(block: TetrisGameBlock?) -> TetrisGameSquare {
+		return TetrisGameSquare(color: color(for: block?.type))
+	}
+
+	//
+	func color(for blockType: TetrisGameBlockType?) -> Color {
+		guard let blockType = blockType else { return .tetrisBlack }
+		return blockType.color
+	}
+
+
+	func squareClicked(row: Int, column: Int) {
+		tetrisGameModel.squareClicked(row: row, column: column)
 	}
 
 }

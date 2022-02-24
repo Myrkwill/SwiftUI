@@ -34,6 +34,12 @@
 		AB469E2227C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2027C6AE3400A343A1 /* TetrisGameViewModel.swift */; };
 		AB469E2827C6B07300A343A1 /* TetrisGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2727C6B07300A343A1 /* TetrisGameView.swift */; };
 		AB469E2927C6B07300A343A1 /* TetrisGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2727C6B07300A343A1 /* TetrisGameView.swift */; };
+		AB469E2C27C6C38B00A343A1 /* TetrisGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2B27C6C38B00A343A1 /* TetrisGameModel.swift */; };
+		AB469E2D27C6C38B00A343A1 /* TetrisGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2B27C6C38B00A343A1 /* TetrisGameModel.swift */; };
+		AB469E2F27C6C4A600A343A1 /* TetrisGameBlockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2E27C6C4A600A343A1 /* TetrisGameBlockType.swift */; };
+		AB469E3027C6C4A600A343A1 /* TetrisGameBlockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2E27C6C4A600A343A1 /* TetrisGameBlockType.swift */; };
+		AB469E3227C6CB7000A343A1 /* Tetromino.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E3127C6CB7000A343A1 /* Tetromino.swift */; };
+		AB469E3327C6CB7000A343A1 /* Tetromino.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E3127C6CB7000A343A1 /* Tetromino.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +80,9 @@
 		AB469E1B27C6ACA400A343A1 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		AB469E2027C6AE3400A343A1 /* TetrisGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameViewModel.swift; sourceTree = "<group>"; };
 		AB469E2727C6B07300A343A1 /* TetrisGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameView.swift; sourceTree = "<group>"; };
+		AB469E2B27C6C38B00A343A1 /* TetrisGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameModel.swift; sourceTree = "<group>"; };
+		AB469E2E27C6C4A600A343A1 /* TetrisGameBlockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameBlockType.swift; sourceTree = "<group>"; };
+		AB469E3127C6CB7000A343A1 /* Tetromino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tetromino.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +210,7 @@
 		AB469E1E27C6ADDA00A343A1 /* TetrisGame */ = {
 			isa = PBXGroup;
 			children = (
+				AB469E2A27C6C37400A343A1 /* Model */,
 				AB469E2327C6B03C00A343A1 /* View */,
 				AB469E1F27C6ADF800A343A1 /* ViewModel */,
 			);
@@ -221,6 +231,16 @@
 				AB469E2727C6B07300A343A1 /* TetrisGameView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AB469E2A27C6C37400A343A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB469E2B27C6C38B00A343A1 /* TetrisGameModel.swift */,
+				AB469E3127C6CB7000A343A1 /* Tetromino.swift */,
+				AB469E2E27C6C4A600A343A1 /* TetrisGameBlockType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,12 +410,15 @@
 				AB469E0427C1794400A343A1 /* Color.swift in Sources */,
 				AB469E2827C6B07300A343A1 /* TetrisGameView.swift in Sources */,
 				AB469E1327C2BABC00A343A1 /* HexagonShape.swift in Sources */,
+				AB469E2C27C6C38B00A343A1 /* TetrisGameModel.swift in Sources */,
 				AB469E1027C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
+				AB469E3227C6CB7000A343A1 /* Tetromino.swift in Sources */,
 				AB469DEB27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DE927C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
 				AB469E2127C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */,
 				AB469E0A27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */,
 				AB469E0127C1791B00A343A1 /* QuizGameHome.swift in Sources */,
+				AB469E2F27C6C4A600A343A1 /* TetrisGameBlockType.swift in Sources */,
 				AB469E1C27C6ACA400A343A1 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,12 +430,15 @@
 				AB469E0527C1794400A343A1 /* Color.swift in Sources */,
 				AB469E2927C6B07300A343A1 /* TetrisGameView.swift in Sources */,
 				AB469E1427C2BABC00A343A1 /* HexagonShape.swift in Sources */,
+				AB469E2D27C6C38B00A343A1 /* TetrisGameModel.swift in Sources */,
 				AB469E1127C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
+				AB469E3327C6CB7000A343A1 /* Tetromino.swift in Sources */,
 				AB469DEC27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DEA27C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
 				AB469E2227C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */,
 				AB469E0B27C17E8800A343A1 /* QuizGamePuzzle.swift in Sources */,
 				AB469E0227C1791B00A343A1 /* QuizGameHome.swift in Sources */,
+				AB469E3027C6C4A600A343A1 /* TetrisGameBlockType.swift in Sources */,
 				AB469E1D27C6ACA400A343A1 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
