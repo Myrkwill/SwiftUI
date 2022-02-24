@@ -8,10 +8,15 @@
 import SwiftUI
 
 class TetrisGameModel: ObservableObject {
+
 	var rows: Int
 	var columns: Int
+
 	@Published var board: [[TetrisGameBlock?]]
 	@Published var tetromino: Tetromino?
+
+	var timer: Timer?
+	var speed: Double
 
 	init(rows: Int = 23, columns: Int = 10) {
 		self.rows = rows
@@ -19,6 +24,8 @@ class TetrisGameModel: ObservableObject {
 
 		board = Array(repeating: Array(repeating: nil, count: rows), count: columns)
 		tetromino = .init(origin: .init(row: 22, column: 4), blockType: .i)
+		speed = 0.1
+		resumeGame()
 	}
 
 	func squareClicked(row: Int, column: Int) {
@@ -29,6 +36,14 @@ class TetrisGameModel: ObservableObject {
 		}
 	}
 
+	func resumeGame() {
+		timer?.invalidate()
+		timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true, block: runEngine)
+	}
+
+	func pauseGame() {
+		timer?.invalidate()
+	}
 }
 
 struct TetrisGameBlock {
