@@ -29,7 +29,7 @@ struct TetrisGameView: View {
 			ForEach(0...Int(rows) - 1, id: \.self) { row in
 				Path { path in
 					let x = xOffset + blockSize * CGFloat(column)
-					let y = rect.height - yOffset - blockSize * CGFloat(row - 1)
+					let y = rect.height - yOffset - blockSize * CGFloat(row + 1)
 					let pathRect = CGRect(x: x, y: y, width: blockSize, height: blockSize)
 					path.addRect(pathRect)
 				}
