@@ -99,7 +99,4 @@ class TetrisGameModel: ObservableObject {
 
 }
 
-struct TetrisGameBlock {
-	var type: TetrisGameBlockType
-}
 

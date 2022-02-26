@@ -40,6 +40,10 @@
 		AB469E3027C6C4A600A343A1 /* TetrisGameBlockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E2E27C6C4A600A343A1 /* TetrisGameBlockType.swift */; };
 		AB469E3227C6CB7000A343A1 /* Tetromino.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E3127C6CB7000A343A1 /* Tetromino.swift */; };
 		AB469E3327C6CB7000A343A1 /* Tetromino.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB469E3127C6CB7000A343A1 /* Tetromino.swift */; };
+		ABC0F4EB27CA3FEE00FC0AC3 /* TetrisGameBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0F4EA27CA3FEE00FC0AC3 /* TetrisGameBlock.swift */; };
+		ABC0F4EC27CA3FEE00FC0AC3 /* TetrisGameBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0F4EA27CA3FEE00FC0AC3 /* TetrisGameBlock.swift */; };
+		ABC0F4EE27CA400F00FC0AC3 /* TetrisBlockLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0F4ED27CA400F00FC0AC3 /* TetrisBlockLocation.swift */; };
+		ABC0F4EF27CA400F00FC0AC3 /* TetrisBlockLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0F4ED27CA400F00FC0AC3 /* TetrisBlockLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,8 @@
 		AB469E2B27C6C38B00A343A1 /* TetrisGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameModel.swift; sourceTree = "<group>"; };
 		AB469E2E27C6C4A600A343A1 /* TetrisGameBlockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameBlockType.swift; sourceTree = "<group>"; };
 		AB469E3127C6CB7000A343A1 /* Tetromino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tetromino.swift; sourceTree = "<group>"; };
+		ABC0F4EA27CA3FEE00FC0AC3 /* TetrisGameBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisGameBlock.swift; sourceTree = "<group>"; };
+		ABC0F4ED27CA400F00FC0AC3 /* TetrisBlockLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisBlockLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +245,8 @@
 				AB469E2B27C6C38B00A343A1 /* TetrisGameModel.swift */,
 				AB469E3127C6CB7000A343A1 /* Tetromino.swift */,
 				AB469E2E27C6C4A600A343A1 /* TetrisGameBlockType.swift */,
+				ABC0F4EA27CA3FEE00FC0AC3 /* TetrisGameBlock.swift */,
+				ABC0F4ED27CA400F00FC0AC3 /* TetrisBlockLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,10 +417,12 @@
 			files = (
 				AB469E0427C1794400A343A1 /* Color.swift in Sources */,
 				AB469E2827C6B07300A343A1 /* TetrisGameView.swift in Sources */,
+				ABC0F4EE27CA400F00FC0AC3 /* TetrisBlockLocation.swift in Sources */,
 				AB469E1327C2BABC00A343A1 /* HexagonShape.swift in Sources */,
 				AB469E2C27C6C38B00A343A1 /* TetrisGameModel.swift in Sources */,
 				AB469E1027C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
 				AB469E3227C6CB7000A343A1 /* Tetromino.swift in Sources */,
+				ABC0F4EB27CA3FEE00FC0AC3 /* TetrisGameBlock.swift in Sources */,
 				AB469DEB27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DE927C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
 				AB469E2127C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */,
@@ -429,10 +439,12 @@
 			files = (
 				AB469E0527C1794400A343A1 /* Color.swift in Sources */,
 				AB469E2927C6B07300A343A1 /* TetrisGameView.swift in Sources */,
+				ABC0F4EF27CA400F00FC0AC3 /* TetrisBlockLocation.swift in Sources */,
 				AB469E1427C2BABC00A343A1 /* HexagonShape.swift in Sources */,
 				AB469E2D27C6C38B00A343A1 /* TetrisGameModel.swift in Sources */,
 				AB469E1127C2B2A800A343A1 /* HoneyComboGridView.swift in Sources */,
 				AB469E3327C6CB7000A343A1 /* Tetromino.swift in Sources */,
+				ABC0F4EC27CA3FEE00FC0AC3 /* TetrisGameBlock.swift in Sources */,
 				AB469DEC27C178D500A343A1 /* ContentView.swift in Sources */,
 				AB469DEA27C178D500A343A1 /* SwiftUIProjectsApp.swift in Sources */,
 				AB469E2227C6AE3400A343A1 /* TetrisGameViewModel.swift in Sources */,

@@ -79,8 +79,3 @@ struct Tetromino {
 	}
 
 }
-
-struct TetrisBlockLocation {
-	var row: Int
-	var column: Int
-}
