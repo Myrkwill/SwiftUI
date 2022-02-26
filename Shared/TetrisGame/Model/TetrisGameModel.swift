@@ -57,15 +57,43 @@ class TetrisGameModel: ObservableObject {
 		}
 
 		let newTetromino = currentTetromino.moveBy(row: -1, column: 0)
+// MARK: - Actions with tetromino
+
+private extension TetrisGameModel {
+
+	/// Полное смещение вниз
+	func dropTetromino() {
+		while(moveTetrominoDown()) { }
+	}
+
+	/// Смещение вправо
+	func moveTetrominoRight() -> Bool {
+		return moveTetromino(rowOffset: 0, columnOffset: 1)
+	}
+
+	/// Смещение влево
+	func moveTetrominoLeft() -> Bool {
+		return moveTetromino(rowOffset: 0, columnOffset: -1)
+	}
+
+	/// Смещение вниз
+	func moveTetrominoDown() -> Bool {
+		return moveTetromino(rowOffset: -1, columnOffset: 0)
+	}
+
+	/// Передвинуть блок
+	/// - Parameter rowOffset: Смещение строки
+	/// - Parameter columnOffset: Смещение столбца
+	func moveTetromino(rowOffset: Int, columnOffset: Int) -> Bool {
+		guard let currentTetromino = tetromino else { return false }
+
+		let newTetromino = currentTetromino.moveBy(row: rowOffset, column: columnOffset)
 		if isValidTetromino(newTetromino) {
-			print("Движение блока вниз")
 			tetromino = newTetromino
-			return
+			return true
 		}
 
-		// see if we need to place the block
-		print("Placing tetromino")
-		placeTetromino()
+		return false
 	}
 
 	func isValidTetromino(_ tetromino: Tetromino) -> Bool {
