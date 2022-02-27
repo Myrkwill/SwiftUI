@@ -9,13 +9,22 @@ import SwiftUI
 
 class TetrisGameModel: ObservableObject {
 
+	///  Количество строк
 	var rows: Int
+
+	/// Количество столбцов
 	var columns: Int
 
+	/// Игровая доска
 	@Published var board: [[TetrisGameBlock?]]
+
+	///
 	@Published var tetromino: Tetromino?
 
+	/// Таймер
 	var timer: Timer?
+
+	/// Скорость
 	var speed: Double
 
 	init(rows: Int = 23, columns: Int = 10) {
@@ -45,18 +54,22 @@ class TetrisGameModel: ObservableObject {
 	}
 
 	func runEngine(timer: Timer) {
-		guard let currentTetromino = tetromino else {
-			print("Спавн блока")
-			tetromino = Tetromino(origin: TetrisBlockLocation(row: 22, column: 4), blockType: .i)
+		guard tetromino != nil else {
+			tetromino = Tetromino.createNewTetromino(rows: rows, columns: columns)
 			if !isValidTetromino(tetromino!) {
-				print("Game over")
 				pauseGame()
 				return
 			}
 			return
 		}
 
-		let newTetromino = currentTetromino.moveBy(row: -1, column: 0)
+		guard !moveTetrominoDown() else { return }
+
+		placeTetromino()
+	}
+
+}
+
 // MARK: - Actions with tetromino
 
 private extension TetrisGameModel {
@@ -126,5 +139,4 @@ private extension TetrisGameModel {
 	}
 
 }
-
 
