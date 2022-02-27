@@ -8,18 +8,38 @@
 import SwiftUI
 
 struct Tetromino {
+	/// Место нахождения
 	var origin: TetrisBlockLocation
+
+	/// Тип плока
 	var blockType: TetrisGameBlockType
 
+	/// Какая сторона
+	var rotation: Int
+
+	// Блоки
 	var blocks: [TetrisBlockLocation] {
-		return Tetromino.getBlocks(blockType: blockType)
+		return Tetromino.getBlocks(blockType: blockType, rotation: rotation)
 	}
 
 	func moveBy(row: Int, column: Int) -> Tetromino {
 		let newOrigin = TetrisBlockLocation(row: origin.row + row, column: origin.column + column)
-		return Tetromino(origin: newOrigin, blockType: blockType)
+		return Tetromino(origin: newOrigin, blockType: blockType, rotation: rotation)
 	}
 
+	func rotate(clockwise: Bool) -> Tetromino {
+		return Tetromino(origin: origin, blockType: blockType, rotation: rotation + (clockwise ? 1 : -1))
+	}
+
+}
+
+// MARK: - 
+
+extension Tetromino {
+
+	/// Получение блоков
+	/// - Parameter blockType: Тип блока
+	/// - Parameter rotation: По умолчанию 0
 	static func getBlocks(blockType: TetrisGameBlockType, rotation: Int = 0) -> [TetrisBlockLocation] {
 		let allBlocks = getAllBlocks(blockType: blockType)
 
@@ -75,7 +95,7 @@ struct Tetromino {
 		}
 
 		let origin = TetrisBlockLocation(row: rows - 1 - maxRow, column: (columns - 1) / 2)
-		return Tetromino(origin: origin, blockType: blockType)
+		return Tetromino(origin: origin, blockType: blockType, rotation: 0)
 	}
 
 }
