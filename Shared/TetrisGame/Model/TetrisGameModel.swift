@@ -32,7 +32,6 @@ class TetrisGameModel: ObservableObject {
 		self.columns = columns
 
 		board = Array(repeating: Array(repeating: nil, count: rows), count: columns)
-		tetromino = .init(origin: .init(row: 22, column: 4), blockType: .i)
 		speed = 0.5
 	}
 
@@ -136,6 +135,21 @@ private extension TetrisGameModel {
 		}
 
 		tetromino = nil
+	}
+
+	func rotateTetromino(clockwise: Bool) {
+		guard let currentTetromino = tetromino else { return }
+
+		let newTetrominoBase = currentTetromino.rotate(clockwise: clockwise)
+		let kicks = currentTetromino.getKicks(clockwise: clockwise)
+
+		for kick in kicks {
+			let newTetromino = newTetrominoBase.moveBy(row: kick.row, column: kick.column)
+			if isValidTetromino(newTetromino) {
+				tetromino = newTetromino
+				return
+			}
+		}
 	}
 
 }
