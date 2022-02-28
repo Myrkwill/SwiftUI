@@ -99,3 +99,47 @@ extension Tetromino {
 	}
 
 }
+
+extension Tetromino {
+
+	func getKicks(clockwise: Bool) -> [TetrisBlockLocation] {
+		return Tetromino.getKicks(blockType: blockType, rotation: rotation, clockwise: clockwise)
+	}
+
+	static func getKicks(blockType: TetrisGameBlockType, rotation: Int, clockwise: Bool) -> [TetrisBlockLocation] {
+		let rotationCount = getAllBlocks(blockType: blockType).count
+
+		var index = rotation % rotationCount
+		if index < 0 { index += rotationCount }
+
+		var kicks = getAllKicks(blockType: blockType)[index]
+		if !clockwise {
+			var counterKicks: [TetrisBlockLocation] = []
+			for kick in kicks {
+				counterKicks.append(.init(row: -1 * kick.row, column: -1 * kick.column))
+			}
+			kicks = counterKicks
+		}
+		return kicks
+	}
+
+	static func getAllKicks(blockType: TetrisGameBlockType) -> [[TetrisBlockLocation]] {
+		switch blockType {
+		case .o:
+			return [[.init(row: 0, column: 0)]]
+		case .i:
+			return [[.init(row: 0, column: 0), .init(row: 0, column: -2), .init(row: 0, column: 1), .init(row: -1, column: -2), .init(row: 2, column: -1)],
+					[.init(row: 0, column: 0), .init(row: 0, column: -1), .init(row: 0, column: 2), .init(row: 2, column: -1), .init(row: -1, column: 2)],
+					[.init(row: 0, column: 0), .init(row: 0, column: 2), .init(row: 0, column: -1), .init(row: 1, column: 2), .init(row: -2, column: -1)],
+					[.init(row: 0, column: 0), .init(row: 0, column: 1), .init(row: 0, column: -2), .init(row: -2, column: 1), .init(row: 1, column: -2)]
+			]
+		case .j, .l, .s, .z, .t:
+			return [[.init(row: 0, column: 0), .init(row: 0, column: -1), .init(row: 1, column: -1), .init(row: 0, column: -2), .init(row: -2, column: -1)],
+					[.init(row: 0, column: 0), .init(row: 0, column: 1), .init(row: -1, column: 1), .init(row: 2, column: 0), .init(row: 1, column: 2)],
+					[.init(row: 0, column: 0), .init(row: 0, column: 1), .init(row: 1, column: 1), .init(row: -2, column: 0), .init(row: -2, column: 1)],
+					[.init(row: 0, column: 0), .init(row: 0, column: -1), .init(row: -1, column: -1), .init(row: 2, column: 0), .init(row: 2, column: -1)]
+			]
+		}
+	}
+
+}
