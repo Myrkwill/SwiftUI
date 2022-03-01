@@ -53,11 +53,13 @@ class TetrisGameModel: ObservableObject {
 	}
 
 	func runEngine(timer: Timer) {
+		guard !clearLines() else { return }
+
+
 		guard tetromino != nil else {
 			tetromino = Tetromino.createNewTetromino(rows: rows, columns: columns)
 			if !isValidTetromino(tetromino!) {
 				pauseGame()
-				return
 			}
 			return
 		}
@@ -150,6 +152,38 @@ private extension TetrisGameModel {
 				return
 			}
 		}
+	}
+
+}
+
+extension TetrisGameModel {
+
+	func clearLines() -> Bool {
+		var newBoard: [[TetrisGameBlock?]] = Array(repeating: Array(repeating: nil, count: rows), count: columns)
+		var boardUpdated = false
+		var nextRowToCopy = 0
+
+		for row in 0...rows - 1 {
+			var clearLine = true
+
+			for column in 0...columns - 1 {
+				clearLine = clearLine && board[column][row] != nil
+			}
+
+			if !clearLine {
+				for column in 0...columns - 1 {
+					newBoard[column][nextRowToCopy] = board[column][row]
+				}
+				nextRowToCopy += 1
+			}
+			boardUpdated = boardUpdated || clearLine
+		}
+
+		if boardUpdated {
+			board = newBoard
+		}
+
+		return boardUpdated
 	}
 
 }
