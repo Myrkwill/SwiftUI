@@ -37,10 +37,6 @@ class TetrisGameViewModel: ObservableObject {
 	}
 
 
-	func squareClicked(row: Int, column: Int) {
-		tetrisGameModel.squareClicked(row: row, column: column)
-	}
-
 }
 
 struct TetrisGameSquare {

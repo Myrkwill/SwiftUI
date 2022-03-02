@@ -22,4 +22,16 @@ enum TetrisGameBlockType: CaseIterable {
 		case .z: return .tetrisRed
 		}
 	}
+
+	var shadow: Color {
+		switch self {
+		case .i: return .tetrisLightBlueShadow
+		case .t: return .tetrisDarkBlueShadow
+		case .o: return .tetrisOrangeShadow
+		case .j: return .tetrisYellowShadow
+		case .l: return .tetrisGreenShadow
+		case .s: return .tetrisPurpleShadow
+		case .z: return .tetrisRedShadow
+		}
+	}
 }

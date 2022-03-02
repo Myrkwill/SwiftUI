@@ -27,20 +27,24 @@ class TetrisGameModel: ObservableObject {
 	/// Скорость
 	var speed: Double
 
+
+	var shadow: Tetromino? {
+		guard var lastShadow = tetromino else { return nil }
+		var testShadow = lastShadow
+		while(isValidTetromino(testShadow)) {
+			lastShadow = testShadow
+			testShadow = lastShadow.moveBy(row: -1, column: 0)
+		}
+
+		return lastShadow
+	}
+
 	init(rows: Int = 23, columns: Int = 10) {
 		self.rows = rows
 		self.columns = columns
 
 		board = Array(repeating: Array(repeating: nil, count: rows), count: columns)
 		speed = 0.5
-	}
-
-	func squareClicked(row: Int, column: Int) {
-		if board[column][row] == nil {
-			board[column][row] = TetrisGameBlock(type: TetrisGameBlockType.allCases.randomElement()!)
-		} else {
-			board[column][row] = nil
-		}
 	}
 
 	func resumeGame() {
