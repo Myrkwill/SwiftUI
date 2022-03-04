@@ -45,6 +45,11 @@ class TetrisGameModel: ObservableObject {
 
 		board = Array(repeating: Array(repeating: nil, count: rows), count: columns)
 		speed = 0.5
+	}
+
+	func restartGame() {
+		board = Array(repeating: Array(repeating: nil, count: rows), count: columns)
+		tetromino = nil
 		resumeGame()
 	}
 

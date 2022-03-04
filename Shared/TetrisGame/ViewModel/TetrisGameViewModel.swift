@@ -48,6 +48,18 @@ class TetrisGameViewModel: ObservableObject {
 		return TetrisGameSquare(color: block?.type.color ?? .tetrisBlack)
 	}
 
+	func restartGame() {
+		tetrisGameModel.restartGame()
+	}
+
+	func startGame() {
+		tetrisGameModel.resumeGame()
+	}
+
+	func pauseGame() {
+		tetrisGameModel.pauseGame()
+	}
+
 	func rotateGesture() -> some Gesture {
 		let tap = TapGesture()
 			.onEnded({self.tetrisGameModel.rotateTetromino(clockwise: true)})
