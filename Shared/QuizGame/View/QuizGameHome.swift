@@ -34,20 +34,9 @@ struct QuizGameHome: View {
 					}
 
 					Spacer()
-
-					/// Кнопка громкости
-					Button {
-
-					} label: {
-						Image(.speaker.wave_2Fill)
-							.font(.title3)
-							.padding(10)
-							.background(Color.deepSkyBlue, in: Circle())
-							.foregroundColor(.white)
-					}
 				}
 				.overlay {
-					Text("Level 1")
+					Text("Quiz Game")
 						.fontWeight(.bold)
 				}
 
