@@ -45,6 +45,7 @@ class TetrisGameModel: ObservableObject {
 
 		board = Array(repeating: Array(repeating: nil, count: rows), count: columns)
 		speed = 0.5
+		resumeGame()
 	}
 
 	func resumeGame() {
@@ -77,7 +78,7 @@ class TetrisGameModel: ObservableObject {
 
 // MARK: - Actions with tetromino
 
-private extension TetrisGameModel {
+extension TetrisGameModel {
 
 	/// Полное смещение вниз
 	func dropTetromino() {
@@ -85,16 +86,19 @@ private extension TetrisGameModel {
 	}
 
 	/// Смещение вправо
+	@discardableResult
 	func moveTetrominoRight() -> Bool {
 		return moveTetromino(rowOffset: 0, columnOffset: 1)
 	}
 
 	/// Смещение влево
+	@discardableResult
 	func moveTetrominoLeft() -> Bool {
 		return moveTetromino(rowOffset: 0, columnOffset: -1)
 	}
 
 	/// Смещение вниз
+	@discardableResult
 	func moveTetrominoDown() -> Bool {
 		return moveTetromino(rowOffset: -1, columnOffset: 0)
 	}
@@ -102,6 +106,7 @@ private extension TetrisGameModel {
 	/// Передвинуть блок
 	/// - Parameter rowOffset: Смещение строки
 	/// - Parameter columnOffset: Смещение столбца
+	@discardableResult
 	func moveTetromino(rowOffset: Int, columnOffset: Int) -> Bool {
 		guard let currentTetromino = tetromino else { return false }
 
