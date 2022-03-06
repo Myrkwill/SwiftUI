@@ -2,7 +2,7 @@
 //  WordsHomeView.swift
 //  SwiftUIProjects (iOS)
 //
-//  Created by 19486464 on 06.03.2022.
+//  Created by Mark Nagibin on 06.03.2022.
 //
 
 import SwiftUI
