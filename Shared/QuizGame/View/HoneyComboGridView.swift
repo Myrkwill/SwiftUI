@@ -26,7 +26,7 @@ struct HoneyComboGridView<Content: View, Item>: View where Item: RandomAccessCol
 				HStack(spacing: 4) {
 					ForEach(setupHoneyGrid()[index].indices, id: \.self) { subIndex in
 						content(setupHoneyGrid()[index][subIndex])
-							.frame(width: width / 4)
+							.frame(width: width / 5)
 							.offset(x: setOffset(index: index))
 					}
 				}
